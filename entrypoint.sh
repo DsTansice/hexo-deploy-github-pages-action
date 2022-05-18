@@ -43,13 +43,15 @@ cd "${GITHUB_WORKSPACE}"
 
 echo ">>> Install NPM dependencies ..."
 npm install
-
+npm install --global gulp-cli
+npm install workbox-build gulp --save
+npm install --save
 echo ">>> Clean folder ..."
 npx hexo clean
 
 echo ">>> Generate file ..."
 npx hexo generate
-
+npx gulp
 cd $TARGET_PUBLISH_DIR
 
 echo ">>> Config git ..."
